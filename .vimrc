@@ -3,12 +3,41 @@
 """"""""""""""""""""""""""""""""""""""""""""""
 "打开代码高亮
 syntax enable
+"允许用指定语法高亮配色方案替换默认方案
+syntax on
+"自适应不同语言的智能缩进
+filetype indent on
+"将制表符扩展为空格
+set expandtab
+"设置编辑时制表符占用空格数
+set tabstop=4
+"设置格式化时制表符占用空格数
+set shiftwidth=4
+"让vim把连续数量的空格视为一个制表符
+set softtabstop=4
+"基于缩进或语法进行代码折叠
+"set foldmethod=indent
+set foldmethod=syntax
+"启动vim时关闭折叠代码
+set nofoldenable
 "设置背景色为黑色
 set background=dark
 "设置颜色主题
 colorscheme solarized
 "打开行数显示
-set nu
+set number
+"禁止拆行
+set nowrap
+"总是显示状态栏
+set laststatus=2
+"显示光标当前位置
+set ruler
+"高亮显示当前行
+set cursorline
+"高亮显示当前列
+"set cursorcolumn
+"高亮显示搜索结果
+set hlsearch
 "打开文件类型侦测
 filetype on
 "根据侦测到的不同类型加载对应的插件
@@ -17,10 +46,22 @@ filetype plugin on
 set incsearch
 "搜索时大小写不敏感
 set ignorecase
+"设置gvim显示字体
+set guifont=YaHei\ Consoles\ Hybrid\ 11.5
 "关闭兼容模式
 set nocompatible
 "vim 自身命令行模式智能补全
 set wildmenu
+"禁止光标闪烁
+set gcr=a:block-blinkon0
+"禁止显示滚动条
+set guioptions-=l
+set guioptions-=L
+set guioptions-=r
+set guioptions-=R
+"禁止显示菜单和工具条
+set guioptions-=m
+set guioptions-=T
 """"""""""""""""""""""""""""""""""""""""""""""
 "快捷键定义
 """"""""""""""""""""""""""""""""""""""""""""""
