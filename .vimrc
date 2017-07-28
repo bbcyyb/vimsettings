@@ -1,3 +1,13 @@
+""""""""""""""""""""""""""""""""""""""""""""
+"设置Vundle
+""""""""""""""""""""""""""""""""""""""""""""""
+set nocompatible 
+filetype off 
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+call vundle#end() 
+filetype plugin indent on
+
 """"""""""""""""""""""""""""""""""""""""""""""
 "基本设置
 """"""""""""""""""""""""""""""""""""""""""""""
@@ -5,8 +15,6 @@
 syntax enable
 "允许用指定语法高亮配色方案替换默认方案
 syntax on
-"自适应不同语言的智能缩进
-filetype indent on
 "将制表符扩展为空格
 set expandtab
 "设置编辑时制表符占用空格数
@@ -18,8 +26,6 @@ set softtabstop=4
 "基于缩进或语法进行代码折叠
 "set foldmethod=indent
 set foldmethod=syntax
-"启动vim时关闭折叠代码
-set nofoldenable
 "设置背景色为黑色
 set background=dark
 "设置颜色主题
@@ -38,10 +44,6 @@ set cursorline
 "set cursorcolumn
 "高亮显示搜索结果
 set hlsearch
-"打开文件类型侦测
-filetype on
-"根据侦测到的不同类型加载对应的插件
-filetype plugin on
 "开启实时搜索功能
 set incsearch
 "搜索时大小写不敏感
