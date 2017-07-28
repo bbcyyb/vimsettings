@@ -6,6 +6,8 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'scrooloose/nerdtree'
+
 call vundle#end() 
 filetype plugin indent on
 
@@ -94,3 +96,18 @@ nnoremap <Leader>kw <C-W>k
 nnoremap <Leader>jw <C-W>j
 "定义快捷键在结对符之间跳转，助记pair
 nmap <Leader>pa %
+""""""""""""""""""""""""""""""""""""""""""""""
+"NERDTree设置
+""""""""""""""""""""""""""""""""""""""""""""""
+"使用NERDTree查看工程文件。设置快捷键，速记：tree show
+nmap <Leader>ts :NERDTreeToggle<CR>
+"设置NERDTree子窗口位置
+let NERDTreeWinSize=32
+"设置NERDTree子窗口位置
+let NERDTreeWinPos="left"
+"显示隐藏文件
+let NERDTreeShowHidden=1
+"NERDTree子窗口中不显示冗余帮助信息
+let NERDTreeMinimalUI=1
+"删除文件时自动删除文件对应额buffer
+let NERDTreeAutoDeleteBuffer=1
