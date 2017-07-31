@@ -7,7 +7,9 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
-
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'jlanzarotta/bufexplorer'
+Plugin 'colepeters/spacemacs-theme.vim'
 call vundle#end() 
 filetype plugin indent on
 
@@ -32,7 +34,8 @@ set foldmethod=syntax
 "设置背景色为黑色
 set background=dark
 "设置颜色主题
-colorscheme solarized
+set termguicolors
+colorscheme spacemacs-theme
 "打开行数显示
 set number
 "禁止拆行
