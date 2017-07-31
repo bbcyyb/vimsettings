@@ -105,7 +105,7 @@ nmap <Leader>pa %
 "使用NERDTree查看工程文件。设置快捷键，速记：tree show
 nmap <Leader>ts :NERDTreeToggle<CR>
 "设置NERDTree子窗口位置
-let NERDTreeWinSize=32
+let NERDTreeWinSize=36
 "设置NERDTree子窗口位置
 let NERDTreeWinPos="left"
 "显示隐藏文件
@@ -114,3 +114,24 @@ let NERDTreeShowHidden=1
 let NERDTreeMinimalUI=1
 "删除文件时自动删除文件对应额buffer
 let NERDTreeAutoDeleteBuffer=1
+
+""""""""""""""""""""""""""""""""""""""""""""""
+"BufExplorer设置
+""""""""""""""""""""""""""""""""""""""""""""""
+"Do not show default help.
+let g:bufExplorerDefaultHelp=0
+"Show relative paths.
+let g:bufExplorerShowRelativePath=1
+"Sort by most recently used.
+let g:bufExplorerSortBy='mru'
+"Split left.
+let g:bufExplorerSplitRight=0
+"Split vartically.
+let g:bufExplorerSplitVertical=1
+"Split width
+g.bufExplorerSplitVertSize=36
+"Open in new window.
+g:bufExplorerUseCurrentWindow=1
+
+autocmd BufWinEnter \[BufList\]
+setl nonumber
