@@ -7,8 +7,8 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'jlanzarotta/bufexplorer'
+"Plugin 'Valloric/YouCompleteMe'
+"Plugin 'jlanzarotta/bufexplorer'
 Plugin 'colepeters/spacemacs-theme.vim'
 call vundle#end() 
 filetype plugin indent on
@@ -34,7 +34,9 @@ set foldmethod=syntax
 "设置背景色为黑色
 set background=dark
 "设置颜色主题
-set termguicolors
+if(has("termguicolors"))
+    set termguicolors
+endif
 colorscheme spacemacs-theme
 "打开行数显示
 set number
@@ -119,19 +121,19 @@ let NERDTreeAutoDeleteBuffer=1
 "BufExplorer设置
 """"""""""""""""""""""""""""""""""""""""""""""
 "Do not show default help.
-let g:bufExplorerDefaultHelp=0
+"let g:bufExplorerDefaultHelp=0
 "Show relative paths.
-let g:bufExplorerShowRelativePath=1
+"let g:bufExplorerShowRelativePath=1
 "Sort by most recently used.
-let g:bufExplorerSortBy='mru'
+"let g:bufExplorerSortBy='mru'
 "Split left.
-let g:bufExplorerSplitRight=0
+"let g:bufExplorerSplitRight=0
 "Split vartically.
-let g:bufExplorerSplitVertical=1
+"let g:bufExplorerSplitVertical=1
 "Split width
-let g.bufExplorerSplitVertSize=36
+"let g.bufExplorerSplitVertSize=36
 "Open in new window.
-let g:bufExplorerUseCurrentWindow=1
+"let g:bufExplorerUseCurrentWindow=1
 
 "autocmd BufWinEnter \[BufList\]
 "setl nonumber
