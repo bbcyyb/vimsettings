@@ -129,9 +129,9 @@ let g:bufExplorerSplitRight=0
 "Split vartically.
 let g:bufExplorerSplitVertical=1
 "Split width
-g.bufExplorerSplitVertSize=36
+let g.bufExplorerSplitVertSize=36
 "Open in new window.
-g:bufExplorerUseCurrentWindow=1
+let g:bufExplorerUseCurrentWindow=1
 
-autocmd BufWinEnter \[BufList\]
-setl nonumber
+"autocmd BufWinEnter \[BufList\]
+"setl nonumber
