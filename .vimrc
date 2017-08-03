@@ -11,6 +11,7 @@ Plugin 'scrooloose/nerdtree'
 "Plugin 'jlanzarotta/bufexplorer'
 Plugin 'colepeters/spacemacs-theme.vim'
 Plugin 'junegunn/fzf'
+Plugin 'jelera/vim-javascript-syntax'
 call vundle#end() 
 filetype plugin indent on
 
