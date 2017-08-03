@@ -7,6 +7,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 "Plugin 'Valloric/YouCompleteMe'
 "Plugin 'jlanzarotta/bufexplorer'
 Plugin 'colepeters/spacemacs-theme.vim'
@@ -119,6 +120,20 @@ let NERDTreeMinimalUI=1
 "删除文件时自动删除文件对应额buffer
 let NERDTreeAutoDeleteBuffer=1
 
+""""""""""""""""""""""""""""""""""""""""""""""
+"nerdtree-git-plugin设置
+""""""""""""""""""""""""""""""""""""""""""""""
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ "Unknown"   : "?"
+    \ }
 """"""""""""""""""""""""""""""""""""""""""""""
 "BufExplorer设置
 """"""""""""""""""""""""""""""""""""""""""""""
