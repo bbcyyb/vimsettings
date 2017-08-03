@@ -10,6 +10,7 @@ Plugin 'scrooloose/nerdtree'
 "Plugin 'Valloric/YouCompleteMe'
 "Plugin 'jlanzarotta/bufexplorer'
 Plugin 'colepeters/spacemacs-theme.vim'
+Plugin 'junegunn/fzf'
 call vundle#end() 
 filetype plugin indent on
 
