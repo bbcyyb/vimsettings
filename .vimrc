@@ -11,6 +11,8 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 "Plugin 'Valloric/YouCompleteMe'
 "Plugin 'jlanzarotta/bufexplorer'
 Plugin 'colepeters/spacemacs-theme.vim'
+Plugin 'joshdick/onedark.vim'
+Plugin 'kudabux/vim-srcery-drk'
 Plugin 'junegunn/fzf'
 Plugin 'jelera/vim-javascript-syntax'
 call vundle#end() 
