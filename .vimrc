@@ -9,7 +9,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 "Plugin 'Valloric/YouCompleteMe'
-"Plugin 'jlanzarotta/bufexplorer'
+Plugin 'jlanzarotta/bufexplorer'
 Plugin 'colepeters/spacemacs-theme.vim'
 Plugin 'joshdick/onedark.vim'
 Plugin 'kudabux/vim-srcery-drk'
@@ -140,19 +140,19 @@ let g:NERDTreeIndicatorMapCustom = {
 "BufExplorer设置
 """"""""""""""""""""""""""""""""""""""""""""""
 "Do not show default help.
-"let g:bufExplorerDefaultHelp=0
+let g:bufExplorerDefaultHelp=0
 "Show relative paths.
-"let g:bufExplorerShowRelativePath=1
+let g:bufExplorerShowRelativePath=1
 "Sort by most recently used.
-"let g:bufExplorerSortBy='mru'
+let g:bufExplorerSortBy='mru'
 "Split left.
-"let g:bufExplorerSplitRight=0
+let g:bufExplorerSplitRight=0
 "Split vartically.
-"let g:bufExplorerSplitVertical=1
+let g:bufExplorerSplitVertical=1
 "Split width
-"let g.bufExplorerSplitVertSize=36
+let g:bufExplorerSplitVertSize=36
 "Open in new window.
-"let g:bufExplorerUseCurrentWindow=1
+let g:bufExplorerUseCurrentWindow=1
 
 "autocmd BufWinEnter \[BufList\]
 "setl nonumber
