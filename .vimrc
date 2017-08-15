@@ -42,7 +42,7 @@ set background=dark
 if(has("termguicolors"))
     set termguicolors
 endif
-colorscheme spacemacs-theme
+colorscheme onedark
 "打开行数显示
 set number
 "禁止拆行
@@ -145,14 +145,14 @@ let g:bufExplorerDefaultHelp=0
 let g:bufExplorerShowRelativePath=1
 "Sort by most recently used.
 let g:bufExplorerSortBy='mru'
-"Split left.
-let g:bufExplorerSplitRight=0
+"Split right.
+let g:bufExplorerSplitRight=1
 "Split vartically.
 let g:bufExplorerSplitVertical=1
 "Split width
 let g:bufExplorerSplitVertSize=36
 "Open in new window.
-let g:bufExplorerUseCurrentWindow=1
+let g:bufExplorerUseCurrentWindow=0
 
 "autocmd BufWinEnter \[BufList\]
 "setl nonumber
