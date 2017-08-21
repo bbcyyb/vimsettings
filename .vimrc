@@ -54,7 +54,7 @@ set ruler
 "高亮显示当前行
 set cursorline
 "高亮显示当前列
-"set cursorcolumn
+set cursorcolumn
 "高亮显示搜索结果
 set hlsearch
 "开启实时搜索功能
