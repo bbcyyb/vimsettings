@@ -16,6 +16,7 @@ Plugin 'joshdick/onedark.vim'
 Plugin 'kudabux/vim-srcery-drk'
 Plugin 'junegunn/fzf'
 Plugin 'jelera/vim-javascript-syntax'
+Plugin 'scrooloose/syntastic'
 call vundle#end() 
 filetype plugin indent on
 
@@ -35,13 +36,17 @@ set shiftwidth=4
 "让vim把连续数量的空格视为一个制表符
 set softtabstop=4
 "基于缩进或语法进行代码折叠
-"set foldmethod=indent
-set foldmethod=syntax
+set foldmethod=indent
+"set foldmethod=syntax
 "设置背景色为黑色
 set background=dark
 "设置颜色主题
 if(has("termguicolors"))
     set termguicolors
+endif
+"调整Tmux以增强其同Vim的集成度
+if exists('$TMUX')
+    set term=screen-256color
 endif
 colorscheme onedark
 "打开行数显示
@@ -157,3 +162,30 @@ let g:bufExplorerUseCurrentWindow=0
 
 "autocmd BufWinEnter \[BufList\]
 "setl nonumber
+
+""""""""""""""""""""""""""""""""""""""""""""""
+" => Plugin: Syntastic
+""""""""""""""""""""""""""""""""""""""""""""""
+"let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_checkers = ['jshint']
+"let g:syntastic_javascript_jshint_args = "-c ~/.jshintrc"
+let g:syntastic_javascript_jshint_args = "~/.jshintrc"
+
+let g:syntastic_json_checkers = ['jsonlint']
+
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+let g:syntastic_enable_signs = 1
+
+" Manually to syntastic check
+noremap <F3> :SyntasticCheck<CR>:Errors<CR>
+
+" Close the error list
+noremap <F4> ::SyntasticReset<CR>
+
+noremap <leader>sn :lnext<CR>
+noremap <leader>sp :lprevious<CR>
+
