@@ -8,15 +8,16 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
-"Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'jlanzarotta/bufexplorer'
-Plugin 'ternjs/tern_for_vim'
 Plugin 'colepeters/spacemacs-theme.vim'
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'joshdick/onedark.vim'
-Plugin 'kudabux/vim-srcery-drk'
+Plugin 'crusoexia/vim-monokai'
 Plugin 'junegunn/fzf'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'scrooloose/syntastic'
+Plugin 'Chiel92/vim-autoformat'
 call vundle#end() 
 filetype plugin indent on
 
@@ -27,6 +28,8 @@ filetype plugin indent on
 syntax enable
 "允许用指定语法高亮配色方案替换默认方案
 syntax on
+"设置当文件发生外部改动时,自动更新文件
+set autoread
 "将制表符扩展为空格
 set expandtab
 "设置编辑时制表符占用空格数
@@ -89,7 +92,7 @@ set guioptions-=T
 "定义快捷键的前缀，即<Leader>
 let mapleader=";"
 "定义快捷键到行首(line begin)
-nmap <Leader>b ^
+nmap <Leader>r ^
 "定义快捷键到行尾(line end)
 nmap <Leader>e $
 "设置快捷键将选中文本块复制至系统剪切板
@@ -173,19 +176,22 @@ let g:syntastic_javascript_jshint_args = "~/.jshintrc"
 
 let g:syntastic_json_checkers = ['jsonlint']
 
-
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_signs = 1
-
 " Manually to syntastic check
 noremap <F3> :SyntasticCheck<CR>:Errors<CR>
-
 " Close the error list
 noremap <F4> ::SyntasticReset<CR>
-
 noremap <leader>sn :lnext<CR>
 noremap <leader>sp :lprevious<CR>
 
+""""""""""""""""""""""""""""""""""""""""""""""
+" => Plugin: vim-autoformat
+""""""""""""""""""""""""""""""""""""""""""""""
+noremap <F5> :Autoformat<CR>
+let g:autoformat_autoindent = 0
+let g:autoformat_retab = 0
+let g:autoformat_remove_trailing_spaces = 0

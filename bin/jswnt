@@ -1,4 +1,5 @@
-grep -RIwns \
+# remove w
+grep -RIins \
 --include="*.js" \
 --include="*.json" \
 --exclude-dir=spec \

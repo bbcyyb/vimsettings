@@ -8,10 +8,7 @@ cp -av ./.tmux.conf ~/.tmux.conf
 
 cp -av ./.gitconfig ~/.gitconfig
 
-if [ ! -d "~/bin" ]; then
-    mkdir -p ~/bin
-fi
-cp -av ./gwntj ~/bin/gwntj
+cp -av ./bin/. ~/bin/
 
 cp -av .jshintrc ~/.jshintrc
 
