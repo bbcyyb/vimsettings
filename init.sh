@@ -7,4 +7,6 @@ npm -g install js-beautify
 
 # Install yapf for Plugin => Chile92/vim-autoformat
 pip install yapf
+
+apt-get install -y vim-scripts vim-gtk vim-gnome
 echo 'Initialize finished. <======='
