@@ -2,7 +2,9 @@
 echo '=======> Deploy file and folder to HOME path.'
 cp -av ./.vimrc ~/.vimrc
 
-cp -av ./.vim/* ~/.vim/
+if [ ! -d "~/.vim/" ]; then
+    mkdir ~/.vim/
+fi
 
 cp -av ./.tmux.conf ~/.tmux.conf
 

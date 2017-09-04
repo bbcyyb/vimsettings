@@ -8,16 +8,25 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive'
+Plugin 'gregsexton/gitv'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'colepeters/spacemacs-theme.vim'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'morhetz/gruvbox'
 Plugin 'joshdick/onedark.vim'
 Plugin 'crusoexia/vim-monokai'
 Plugin 'junegunn/fzf'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'scrooloose/syntastic'
 Plugin 'Chiel92/vim-autoformat'
+Plugin 'Tcomment'
+Plugin 'Raimondi/delimitMate'
+Plugin 'tpope/vim-surround'
+" Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'Yggdroot/indentLine'
 call vundle#end() 
 filetype plugin indent on
 
@@ -44,16 +53,20 @@ set foldmethod=indent
 "设置背景色为黑色
 set background=dark
 "设置颜色主题
-if(has("termguicolors"))
-    set termguicolors
-endif
+"if(has("termguicolors"))
+"    set termguicolors
+"endif
 "调整Tmux以增强其同Vim的集成度
 if exists('$TMUX')
     set term=screen-256color
 endif
-colorscheme onedark
+colorscheme gruvbox
 "打开行数显示
 set number
+"自动缩进
+set ai
+"智能缩进
+set si
 "禁止拆行
 set nowrap
 "总是显示状态栏
@@ -86,6 +99,8 @@ set guioptions-=R
 "禁止显示菜单和工具条
 set guioptions-=m
 set guioptions-=T
+"禁止在vimgrep中查找以下目录
+set wildignore+=**/node_modules/**,**/.git/,**/*.swp
 """"""""""""""""""""""""""""""""""""""""""""""
 "快捷键定义
 """"""""""""""""""""""""""""""""""""""""""""""
@@ -195,3 +210,28 @@ noremap <F5> :Autoformat<CR>
 let g:autoformat_autoindent = 0
 let g:autoformat_retab = 0
 let g:autoformat_remove_trailing_spaces = 0
+
+""""""""""""""""""""""""""""""""""""""""""""""
+" => Plugin: vim-gitgutter
+""""""""""""""""""""""""""""""""""""""""""""""
+" Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
+nmap <Leader>vv :GitGutterToggle<CR>
+nmap <Leader>vn <Plug>GitGutterNextHunk
+nmap <Leader>vp <Plug>GitGutterPrevHunk
+
+let g:gitgutter_highlight_lines = 1
+
+""""""""""""""""""""""""""""""""""""""""""""""
+" => Plugin: vim-indent-guide
+""""""""""""""""""""""""""""""""""""""""""""""
+" let g:indent_guides_start_level = 2
+" let g:indent_guides_guide_size = 1
+" let g:indent_guides_enable_on_vim_startup = 1
+
+""""""""""""""""""""""""""""""""""""""""""""""
+" => Plugin: indentLine
+""""""""""""""""""""""""""""""""""""""""""""""
+" indentLine 代码缩进线标志线
+let g:indentLine_char = '|'
+let g:indentLine_color_term = 239
+map <F11> :IndentLinesToggle<CR>
