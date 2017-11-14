@@ -18,10 +18,12 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'morhetz/gruvbox'
 Plugin 'joshdick/onedark.vim'
 Plugin 'crusoexia/vim-monokai'
+Plugin 'powerline/powerline'
 Plugin 'junegunn/fzf'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'scrooloose/syntastic'
 Plugin 'Chiel92/vim-autoformat'
+Plugin 'maksimr/vim-jsbeautify'
 Plugin 'Tcomment'
 Plugin 'Raimondi/delimitMate'
 Plugin 'tpope/vim-surround'
@@ -184,12 +186,20 @@ let g:bufExplorerUseCurrentWindow=0
 """"""""""""""""""""""""""""""""""""""""""""""
 " => Plugin: Syntastic
 """"""""""""""""""""""""""""""""""""""""""""""
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
 "let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_checkers = ['jshint']
-"let g:syntastic_javascript_jshint_args = "-c ~/.jshintrc"
-let g:syntastic_javascript_jshint_args = "~/.jshintrc"
+"let g:syntastic_javascript_jshint_args = "-c /home/kevin/.jshintrc"
+let g:syntastic_javascript_jshint_args = "/home/kevin/.jshintrc"
 
 let g:syntastic_json_checkers = ['jsonlint']
+
+let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_flake8_args = '--config=/home/kevin/.flake8.ini'
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
@@ -219,7 +229,7 @@ nmap <Leader>vv :GitGutterToggle<CR>
 nmap <Leader>vn <Plug>GitGutterNextHunk
 nmap <Leader>vp <Plug>GitGutterPrevHunk
 
-let g:gitgutter_highlight_lines = 1
+let g:gitgutter_highlight_lines = 0
 
 """"""""""""""""""""""""""""""""""""""""""""""
 " => Plugin: vim-indent-guide
@@ -235,3 +245,18 @@ let g:gitgutter_highlight_lines = 1
 let g:indentLine_char = '|'
 let g:indentLine_color_term = 239
 map <F11> :IndentLinesToggle<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""
+" => Plugin: powerline 
+""""""""""""""""""""""""""""""""""""""""""""""
+set guifont=PowerlineSymbols\ for\ Powerline
+set nocompatible
+set t_Co=256
+let g:Powerline_symbols = 'fancy'
+
+""""""""""""""""""""""""""""""""""""""""""""""
+" => Plugin: gruvbox 
+""""""""""""""""""""""""""""""""""""""""""""""
+let g:gruvbox_contrast_dark = 'soft'
+let g:gruvbox_contrst_light = 'soft'
+let g:gruvbox_hls_cursor = 'blue'
