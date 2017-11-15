@@ -29,6 +29,7 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'tpope/vim-surround'
 " Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'Yggdroot/indentLine'
+Plugin 'ap/vim-buftabline'
 call vundle#end() 
 filetype plugin indent on
 
@@ -260,3 +261,11 @@ let g:Powerline_symbols = 'fancy'
 let g:gruvbox_contrast_dark = 'soft'
 let g:gruvbox_contrst_light = 'soft'
 let g:gruvbox_hls_cursor = 'blue'
+
+""""""""""""""""""""""""""""""""""""""""""""""
+" => Plugin: vim-buftabline 
+""""""""""""""""""""""""""""""""""""""""""""""
+set hidden
+nnoremap <Tab> :bnext<CR>
+"nnoremap <Tab>` :bprev<CR>
+
