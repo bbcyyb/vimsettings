@@ -266,6 +266,6 @@ let g:gruvbox_hls_cursor = 'blue'
 " => Plugin: vim-buftabline 
 """"""""""""""""""""""""""""""""""""""""""""""
 set hidden
-nnoremap <Tab> :bnext<CR>
-"nnoremap <Tab>` :bprev<CR>
+nnoremap <Leader>d :bnext<CR>
+nnoremap <Leader>a :bprev<CR>
 
