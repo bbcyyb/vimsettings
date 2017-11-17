@@ -12,6 +12,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'gregsexton/gitv'
 Plugin 'Valloric/YouCompleteMe'
+"Plugin 'davidhalter/jedi-vim'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'colepeters/spacemacs-theme.vim'
 Plugin 'altercation/vim-colors-solarized'
@@ -148,7 +149,8 @@ let NERDTreeShowHidden=1
 let NERDTreeMinimalUI=1
 "删除文件时自动删除文件对应额buffer
 let NERDTreeAutoDeleteBuffer=1
-
+"隐藏.pyc文件
+let NERDTreeIgnore=['\.pyc$','\~$']
 """"""""""""""""""""""""""""""""""""""""""""""
 "nerdtree-git-plugin设置
 """"""""""""""""""""""""""""""""""""""""""""""
@@ -267,5 +269,32 @@ let g:gruvbox_hls_cursor = 'blue'
 """"""""""""""""""""""""""""""""""""""""""""""
 set hidden
 nnoremap <Leader>d :bnext<CR>
+nnoremap <Tab> :bnext<CR>
 nnoremap <Leader>a :bprev<CR>
-
+nnoremap <Leader><Tab> :bprev<CR>
+""""""""""""""""""""""""""""""""""""""""""""""
+" => Plugin: jedi-vim
+""""""""""""""""""""""""""""""""""""""""""""""
+let g:jedi#completions_command = "<C-J>"
+let g:jedi#auto_initialization = 1
+let g:jedi#auto_vim_configuration = 1
+""""""""""""""""""""""""""""""""""""""""""""""
+" => Plugin: YouCompleteMe
+""""""""""""""""""""""""""""""""""""""""""""""
+" YouCompleteMe settings
+let g:ycm_collect_identifiers_from_comments_and_strings = 0
+" 输入第0个字符开始补全
+let g:ycm_min_num_of_chars_for_completion=0
+" 禁止缓存匹配项,每次都重新生成匹配项
+let g:ycm_cache_omnifunc=0
+" 开启语义补全
+let g:ycm_seed_identifiers_with_syntax=1
+" 在注释输入中也能补全
+let g:ycm_complete_in_comments = 1
+" 在字符串输入中也能补全
+let g:ycm_complete_in_strings = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
+" let g:ycm_filetype_whitelist = { 'python': 1 }
+let g:ycm_python_binary_path = 'python'
+map <C-G>  :YcmCompleter GoToDefinitionElseDeclaration<CR>
