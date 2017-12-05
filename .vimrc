@@ -11,9 +11,10 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'gregsexton/gitv'
-"YCM安装相对复杂，需要编译YCM core，安装方法参照http://www.jianshu.com/p/d908ce81017a?nomobile=yes
-"Plugin 'Valloric/YouCompleteMe'
-"Plugin 'davidhalter/jedi-vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'colepeters/spacemacs-theme.vim'
 Plugin 'altercation/vim-colors-solarized'
@@ -269,16 +270,24 @@ let g:gruvbox_hls_cursor = 'blue'
 " => Plugin: vim-buftabline 
 """"""""""""""""""""""""""""""""""""""""""""""
 set hidden
+let g:buftabline_numbers = 2
+let g:buftabline_indicators = 'on'
+let g:buftabline_separators = 'on'
+let g:buftabline_plug_max = 10
 nnoremap <Leader>d :bnext<CR>
 nnoremap <Tab> :bnext<CR>
 nnoremap <Leader>a :bprev<CR>
 nnoremap <Leader><Tab> :bprev<CR>
-""""""""""""""""""""""""""""""""""""""""""""""
-" => Plugin: jedi-vim
-""""""""""""""""""""""""""""""""""""""""""""""
-"let g:jedi#completions_command = "<C-J>"
-"let g:jedi#auto_initialization = 1
-"let g:jedi#auto_vim_configuration = 1
+nmap <leader>1 <Plug>BufTabLine.Go(1)
+nmap <leader>2 <Plug>BufTabLine.Go(2)
+nmap <leader>3 <Plug>BufTabLine.Go(3)
+nmap <leader>4 <Plug>BufTabLine.Go(4)
+nmap <leader>5 <Plug>BufTabLine.Go(5)
+nmap <leader>6 <Plug>BufTabLine.Go(6)
+nmap <leader>7 <Plug>BufTabLine.Go(7)
+nmap <leader>8 <Plug>BufTabLine.Go(8)
+nmap <leader>9 <Plug>BufTabLine.Go(9)
+nmap <leader>0 <Plug>BufTabLine.Go(0)
 """"""""""""""""""""""""""""""""""""""""""""""
 " => Plugin: YouCompleteMe
 """"""""""""""""""""""""""""""""""""""""""""""
@@ -299,6 +308,13 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 " let g:ycm_filetype_whitelist = { 'python': 1 }
 let g:ycm_python_binary_path = 'python'
 map <C-G>  :YcmCompleter GoToDefinitionElseDeclaration<CR>
-"编译ycm_core后再将下面两个配置打开
-"let g:ycm_server_python_interpreter='/usr/bin/python'
-"let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
+let g:ycm_key_invoke_completion = '<C-J>'
+let g:ycm_path_to_python_interpreter = '/usr/bin/python'
+let g:ycm_server_python_interpreter = '/usr/bin/python'
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+""""""""""""""""""""""""""""""""""""""""""""""
+" => Plugin: UltiSnips
+""""""""""""""""""""""""""""""""""""""""""""""
+let g:UltiSnipsExpandTrigger="<leader><tab>"
+let g:UltiSnipsJumpForwardTrigger="<leader><tab>"
+let g:UltiSnipsJumpBackwardTrgger="<leader><tab>"
