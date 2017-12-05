@@ -269,6 +269,33 @@ let g:gruvbox_hls_cursor = 'blue'
 """"""""""""""""""""""""""""""""""""""""""""""
 " => Plugin: vim-buftabline 
 """"""""""""""""""""""""""""""""""""""""""""""
+fun! DeleteAllBuffersInWindow()
+    let s:curWinNr = winnr()
+    if winbufnr(s:curWinNr) == 1
+        ret
+    endif
+    let s:curBufNr = bufnr("%")
+    exe "bn"
+    let s:nextBufNr = bufnr("%")
+    while s:nextBufNr != s:curBufNr
+        exe "bn"
+        exe "bdel ".s:nextBufNr
+        let s:nextBufNr = bufnr("%")
+    endwhile
+endfun
+
+fun! DeleteCurrentBufferInWindow()
+    let s:curWinNr = winnr()
+    if winbufnr(s:curWinNr) == 1
+        ret
+    endif
+    let s:curBufNr = bufnr("%")
+    exe "bn"
+    let s:nextBufNr = bufnr("%")
+    if s:nextBufNr != s:curBufNr
+        exe "bdel ".s:curBufNr
+    endif
+endfun
 set hidden
 let g:buftabline_numbers = 2
 let g:buftabline_indicators = 'on'
@@ -288,6 +315,8 @@ nmap <leader>7 <Plug>BufTabLine.Go(7)
 nmap <leader>8 <Plug>BufTabLine.Go(8)
 nmap <leader>9 <Plug>BufTabLine.Go(9)
 nmap <leader>0 <Plug>BufTabLine.Go(0)
+map <leader>da     :call DeleteAllBuffersInWindow()<CR>
+map <leader>dc     :call DeleteCurrentBufferInWindow()<CR>
 """"""""""""""""""""""""""""""""""""""""""""""
 " => Plugin: YouCompleteMe
 """"""""""""""""""""""""""""""""""""""""""""""
