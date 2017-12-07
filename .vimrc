@@ -153,6 +153,8 @@ let NERDTreeMinimalUI=1
 let NERDTreeAutoDeleteBuffer=1
 "隐藏.pyc文件
 let NERDTreeIgnore=['\.pyc$','\~$']
+" 自动打开NERDTree
+autocmd vimenter * NERDTree
 """"""""""""""""""""""""""""""""""""""""""""""
 "nerdtree-git-plugin设置
 """"""""""""""""""""""""""""""""""""""""""""""
@@ -316,7 +318,7 @@ nmap <leader>8 <Plug>BufTabLine.Go(8)
 nmap <leader>9 <Plug>BufTabLine.Go(9)
 nmap <leader>0 <Plug>BufTabLine.Go(0)
 map <leader>da     :call DeleteAllBuffersInWindow()<CR>
-map <leader>dc     :call DeleteCurrentBufferInWindow()<CR>
+map <leader>df     :call DeleteCurrentBufferInWindow()<CR>
 """"""""""""""""""""""""""""""""""""""""""""""
 " => Plugin: YouCompleteMe
 """"""""""""""""""""""""""""""""""""""""""""""
