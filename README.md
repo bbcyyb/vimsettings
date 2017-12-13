@@ -48,3 +48,6 @@ Download Vundle tools from github.
  * If not exist *~/bin* folder, create new.
  * Copy gwntj to ~/bin/
  * Copy .jshintrc to ~/
+
+## Setting up Vim for React.js
+React.js is gaining a lot of traction lately, but developing with its inline-XML-in-JS requires a few tweaks to Vim for a smooth experience.

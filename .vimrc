@@ -35,6 +35,10 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'ap/vim-buftabline'
 " emmet, 用于快速构建html代码片段
 Plugin 'mattn/emmet-vim'
+" JavaScript bundle for vim, this bundle provides syntax highlighting and improved indentation.
+Plugin 'pangloss/vim-javascript'
+" Syntax highlighting and indenting for JSX
+Plugin 'mxw/vim-jsx'
 call vundle#end() 
 filetype plugin indent on
 
@@ -156,7 +160,7 @@ let NERDTreeAutoDeleteBuffer=1
 "隐藏.pyc文件
 let NERDTreeIgnore=['\.pyc$','\~$']
 " 自动打开NERDTree
-autocmd vimenter * NERDTree
+" autocmd vimenter * NERDTree
 """"""""""""""""""""""""""""""""""""""""""""""
 "nerdtree-git-plugin设置
 """"""""""""""""""""""""""""""""""""""""""""""
@@ -200,8 +204,8 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-"let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_javascript_checkers = ['eslint']
+"let g:syntastic_javascript_checkers = ['jshint']
 "let g:syntastic_javascript_jshint_args = "-c /home/kevin/.jshintrc"
 let g:syntastic_javascript_jshint_args = "/home/kevin/.jshintrc"
 
@@ -351,3 +355,7 @@ let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 let g:UltiSnipsExpandTrigger="<leader><tab>"
 let g:UltiSnipsJumpForwardTrigger="<leader><tab>"
 let g:UltiSnipsJumpBackwardTrgger="<leader><tab>"
+""""""""""""""""""""""""""""""""""""""""""""""
+" => Plugin: vim-jsx
+""""""""""""""""""""""""""""""""""""""""""""""
+let g:jsx_ext_required = 0
