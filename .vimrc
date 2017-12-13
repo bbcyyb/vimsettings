@@ -33,6 +33,8 @@ Plugin 'tpope/vim-surround'
 " Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'Yggdroot/indentLine'
 Plugin 'ap/vim-buftabline'
+" emmet, 用于快速构建html代码片段
+Plugin 'mattn/emmet-vim'
 call vundle#end() 
 filetype plugin indent on
 
