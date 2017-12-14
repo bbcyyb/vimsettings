@@ -37,7 +37,7 @@ export PATH=$PATH:/home/kevin/bin
 jshint config, used by RrackHD project.
 
 ## .eslintrc
-eslint config, need to config this if you want to use react. [More detail about this](#How to set up Vim for React.js).
+eslint config, need to config this if you want to use react.
 
 ## script
 ### clean.sh
