@@ -37,7 +37,7 @@ export PATH=$PATH:/home/kevin/bin
 jshint config, used by RrackHD project.
 
 ## .eslintrc
-eslint config, need to config this if you want to use react. [More detail about this](#anchor_react).
+eslint config, need to config this if you want to use react. [More detail about this](#How to set up Vim for React.js).
 
 ## script
 ### clean.sh
@@ -58,7 +58,7 @@ Download Vundle tools from github.
 ---
 ---
 
-### <span id="anchor_react"></span> How to set up Vim for [React.js](https://reactjs.org)
+### How to set up Vim for [React.js](https://reactjs.org)
 
 [React.js](https://reactjs.org) is gaining a lot of traction lately, but developing with its inline-XML-in-JS requires a few tweaks to Vim for a smooth experience.
 
