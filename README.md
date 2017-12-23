@@ -17,6 +17,8 @@ Some settings for development environment.
 ### .vimrc
 Basic vim config.
 
+> how to (install you complete me)[https://www.jianshu.com/p/d908ce81017a?nomobile=yes]
+
 ## .tmux.conf
 Basic tmux config, need add below code into **.bashrc** before using tmux.
 ```sh 
