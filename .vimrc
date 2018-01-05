@@ -39,6 +39,10 @@ Plugin 'mattn/emmet-vim'
 Plugin 'pangloss/vim-javascript'
 " Syntax highlighting and indenting for JSX
 Plugin 'mxw/vim-jsx'
+" Typescript syntax highlighting vim
+Plugin 'leafgarland/typescript-vim'
+" Go language support for Vim
+Plugin 'fatih/vim-go'
 call vundle#end() 
 filetype plugin indent on
 
