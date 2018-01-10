@@ -39,6 +39,10 @@ Plugin 'mattn/emmet-vim'
 Plugin 'pangloss/vim-javascript'
 " Syntax highlighting and indenting for JSX
 Plugin 'mxw/vim-jsx'
+" 增强型Python语法检测
+Plugin 'hdima/python-syntax'
+" 增加python语法缩进加强
+Plugin 'vim-scripts/indentpython.vim'
 call vundle#end() 
 filetype plugin indent on
 
@@ -212,7 +216,7 @@ let g:syntastic_javascript_jshint_args = "/home/kevin/.jshintrc"
 let g:syntastic_json_checkers = ['jsonlint']
 
 let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_python_flake8_args = '--config=/home/kevin/.flake8.ini'
+" let g:syntastic_python_flake8_args = '--config=/home/kevin/.flake8.ini'
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
@@ -359,3 +363,17 @@ let g:UltiSnipsJumpBackwardTrgger="<leader><tab>"
 " => Plugin: vim-jsx
 """"""""""""""""""""""""""""""""""""""""""""""
 let g:jsx_ext_required = 0
+""""""""""""""""""""""""""""""""""""""""""""""
+" => Plugin: python-syntax
+""""""""""""""""""""""""""""""""""""""""""""""
+let python_highlight_all = 1
+""""""""""""""""""""""""""""""""""""""""""""""
+" => Plugin: jedi-vim
+""""""""""""""""""""""""""""""""""""""""""""""
+let g:jedi#auto_initialization = 0
+let g:jedi#auto_vim_configuration = 0
+let g:jedi#use_tabs_not_buffers = 1
+let g:jedi#use_splits_not_buffers = "left"
+let g:jedi#popup_on_dot = 0
+let g:jedi#popup_select_first = 0
+let g:jedi#show_call_signatures = "1"
