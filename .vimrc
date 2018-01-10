@@ -43,6 +43,10 @@ Plugin 'mxw/vim-jsx'
 Plugin 'hdima/python-syntax'
 " 增加python语法缩进加强
 Plugin 'vim-scripts/indentpython.vim'
+" Typescript syntax highlighting vim
+Plugin 'leafgarland/typescript-vim'
+" Go language support for Vim
+Plugin 'fatih/vim-go'
 call vundle#end() 
 filetype plugin indent on
 
