@@ -1,4 +1,22 @@
-""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""" 
+"判断操作系统是否是 Windows 还是 Linux
+""""""""""""""""""""""""""""""""""""""""""""""  
+let g:iswindows = 0  
+let g:islinux = 0  
+if(has("win32") || has("win64") || has("win95") || has("win16"))  
+    let g:iswindows = 1  
+else  
+    let g:islinux = 1  
+endif  
+""""""""""""""""""""""""""""""""""""""""""""""  
+"判断是终端还是 Gvim 
+""""""""""""""""""""""""""""""""""""""""""""""
+if has("gui_running")  
+    let g:isGUI = 1  
+else  
+    let g:isGUI = 0  
+endif
+""""""""""""""""""""""""""""""""""""""""""""""
 "设置Vundle
 """"""""""""""""""""""""""""""""""""""""""""""
 set nocompatible 
@@ -53,6 +71,8 @@ filetype plugin indent on
 """"""""""""""""""""""""""""""""""""""""""""""
 "基本设置
 """"""""""""""""""""""""""""""""""""""""""""""
+"设置编码规范
+set encoding=utf-8
 "打开代码高亮
 syntax enable
 "允许用指定语法高亮配色方案替换默认方案
@@ -104,7 +124,12 @@ set incsearch
 "搜索时大小写不敏感
 set ignorecase
 "设置gvim显示字体
-set guifont=YaHei\ Consoles\ Hybrid\ 11.5
+"if g:iswindows
+"    set guifont=Consolas:h14
+"else
+"    set guifont=YaHei\ Consolas\ Hybrid\ 14
+"endif
+set guifont=h14
 "关闭兼容模式
 set nocompatible
 "vim 自身命令行模式智能补全
