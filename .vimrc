@@ -65,6 +65,9 @@ Plugin 'vim-scripts/indentpython.vim'
 Plugin 'leafgarland/typescript-vim'
 " Go language support for Vim
 Plugin 'fatih/vim-go'
+" Go语言自动完成工具，如果需要Ycm支持Go语言的话，需要安装下面两个组件gocode和godef
+Plugin 'nsf/gocode', {'rtp': 'vim/'}
+Plugin 'Manishearth/godef'
 call vundle#end() 
 filetype plugin indent on
 
