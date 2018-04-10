@@ -247,7 +247,7 @@ let g:syntastic_json_checkers = ['jsonlint']
 let g:syntastic_python_checkers = ['flake8']
 " let g:syntastic_python_flake8_args = '--config=/home/kevin/.flake8.ini'
 
-let g:syntastic_go_checkers = ['golint']
+let g:syntastic_go_checkers = ['gofmt']
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
