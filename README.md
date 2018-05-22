@@ -17,6 +17,32 @@ Some settings for development environment.
 ### .vimrc
 Basic vim config.
 
+### How to Start?
+
+#### 1. Clone source code to local.
+
+```shell
+git clone https://github.com/bbcyyb/vimsettings.git
+```
+
+#### 2. Run shell file as following
+
+```shell
+$sudo ./clean.sh
+$sudo ./init.sh
+$sudo ./deploy.sh
+```
+
+#### 3. Start Vim and install plugin
+
+```vim
+:PlginInstall
+```
+
+#### 4. Install YouCompleteMe Plugin
+
+#### 5. Install lint for each language
+
 > how to (install you complete me)[https://www.jianshu.com/p/d908ce81017a?nomobile=yes]
 
 ## How to suport Go in YouCompleteMe?
@@ -50,22 +76,6 @@ jshint config, used by RrackHD project.
 
 ## .eslintrc
 eslint config, need to config this if you want to use react.
-
-## script
-### clean.sh
-Clean all existed vim config on user folder.
-
-### init.sh
-Download Vundle tools from github.
-
-### deploy.sh
- * Copy .vimrc to ~/
- * Copy vim/ to ~/
- * Copy .tmux.conf to ~/
- * Copy .gitconfig to ~/
- * If not exist *~/bin* folder, create new.
- * Copy gwntj to ~/bin/
- * Copy .jshintrc to ~/
 
 ---
 ---
