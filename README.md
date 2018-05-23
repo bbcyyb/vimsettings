@@ -28,9 +28,9 @@ git clone https://github.com/bbcyyb/vimsettings.git
 #### 2. Run shell file as following
 
 ```shell
-$sudo ./clean.sh
-$sudo ./init.sh
-$sudo ./deploy.sh
+$ sudo ./clean.sh
+$ sudo ./init.sh
+$ sudo ./deploy.sh
 ```
 
 #### 3. Start Vim and install plugin
@@ -43,7 +43,55 @@ $sudo ./deploy.sh
 
 #### 5. Install lint for each language
 
-> how to (install you complete me)[https://www.jianshu.com/p/d908ce81017a?nomobile=yes]
+## How to install you complete me (without C/C++ supported)
+(link here)[https://www.jianshu.com/p/d908ce81017a?nomobile=yes]
+
+### 1. Install dependencies
+
+```shell
+$ sudo apt-get update && sudo apt-get -y install cmake g++ python-dev
+```
+
+### 2. Compile & Build `ycm_core` library
+
+#### Create a folder for compiled files
+
+```shell
+$ mkdir ~/.ycm_build
+$ cd ~/.ycm_build
+```
+
+#### Generate makefile
+
+```shell
+$ sudo cmake -G "Unix Makefiles" . ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp
+```
+
+#### Build ycm_core
+
+```shell
+$ sudo cmake --build . --target ycm_core --config Release
+```
+
+### 4. Configuration
+
+#### Copy `.ycm_extra_conf.py`
+
+```shell
+$ cp ~/.vim/bundle/YouCompleteMe/third_party/ycmd/examples/.ycm_extra_conf.py ~/.vim/
+```
+
+#### Add `.vimrc` conf
+
+> These info has been added into .vimrc already.
+
+```shell
+" ～/.vimrc
+let g:ycm_server_python_interpreter='/usr/bin/python'
+let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
+```
+
+Done
 
 ## How to suport Go in YouCompleteMe?
 
