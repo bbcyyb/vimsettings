@@ -271,6 +271,7 @@ noremap <F5> :Autoformat<CR>
 let g:autoformat_autoindent = 0
 let g:autoformat_retab = 0
 let g:autoformat_remove_trailing_spaces = 0
+let g:formatter_yapf_style = 'pep8'
 
 """"""""""""""""""""""""""""""""""""""""""""""
 " => Plugin: vim-gitgutter
@@ -384,9 +385,10 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_python_binary_path = 'python'
 map <C-G>  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 let g:ycm_key_invoke_completion = '<C-J>'
-let g:ycm_path_to_python_interpreter = '/usr/bin/python'
-let g:ycm_server_python_interpreter = '/usr/bin/python'
-let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+let g:ycm_path_to_python_interpreter = '/usr/local/bin/python3'
+let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
+"let g:ycm_global_ycm_extra_conf = '~/.vim/.global_extra_conf.py'
+let g:ycm_confirm_extra_conf = 0
 """"""""""""""""""""""""""""""""""""""""""""""
 " => Plugin: UltiSnips
 """"""""""""""""""""""""""""""""""""""""""""""
@@ -404,8 +406,8 @@ let python_highlight_all = 1
 """"""""""""""""""""""""""""""""""""""""""""""
 " => Plugin: jedi-vim
 """"""""""""""""""""""""""""""""""""""""""""""
-let g:jedi#auto_initialization = 0
-let g:jedi#auto_vim_configuration = 0
+"let g:jedi#auto_initialization = 0 
+"let g:jedi#auto_vim_configuration = 0
 let g:jedi#use_tabs_not_buffers = 1
 let g:jedi#use_splits_not_buffers = "left"
 let g:jedi#popup_on_dot = 0
