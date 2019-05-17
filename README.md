@@ -55,6 +55,13 @@ $ sudo ./deploy.sh
 
 ### ~~4. Navigate to `YouCompleteMe/third_party/ycmd/third_party/godef` and run `go build`.~~
 
+## Use proxy to jump out China Great Wall
+
+```shell
+export GOPROXY=https://goproxy.io
+export GO111MODULE=on
+```
+
 ## .tmux.conf
 Basic tmux config, need add below code into **.bashrc** before using tmux.
 ```sh 
