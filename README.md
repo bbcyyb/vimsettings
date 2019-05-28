@@ -144,3 +144,24 @@ Finally, configure Syntastic to use ESLint:
 ```php
 let g:syntastic_javascript_checkers = ['eslint']
 ```
+
+
+## Fix tmux and vim style mismatch.
+
+After adding the line below into `.tmux.conf`
+
+```shell
+set -g default-terminal "screen-256color"
+```
+
+You still need to add the line below into `.vimrc`
+
+```shell
+set term=screen-256color
+```
+
+Finally, the alias need to be added to `.bashrc`
+
+```shell
+alias tmux='tmux -2'
+```
