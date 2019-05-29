@@ -39,7 +39,6 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'morhetz/gruvbox'
 Plugin 'joshdick/onedark.vim'
 Plugin 'crusoexia/vim-monokai'
-Plugin 'powerline/powerline'
 Plugin 'junegunn/fzf'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'scrooloose/syntastic'
@@ -50,7 +49,8 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'tpope/vim-surround'
 " Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'Yggdroot/indentLine'
-Plugin 'ap/vim-buftabline'
+" 将buffer中的页面显示在tabline中
+" Plugin 'ap/vim-buftabline'
 " emmet, 用于快速构建html代码片段
 Plugin 'mattn/emmet-vim'
 " JavaScript bundle for vim, this bundle provides syntax highlighting and improved indentation.
@@ -65,6 +65,8 @@ Plugin 'vim-scripts/indentpython.vim'
 Plugin 'leafgarland/typescript-vim'
 " Go language support for Vim
 Plugin 'fatih/vim-go'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 call vundle#end() 
 filetype plugin indent on
 
@@ -296,14 +298,6 @@ let g:indentLine_color_term = 239
 map <F11> :IndentLinesToggle<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""
-" => Plugin: powerline 
-""""""""""""""""""""""""""""""""""""""""""""""
-set guifont=PowerlineSymbols\ for\ Powerline
-set nocompatible
-set t_Co=256
-let g:Powerline_symbols = 'fancy'
-
-""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugin: gruvbox 
 """"""""""""""""""""""""""""""""""""""""""""""
 let g:gruvbox_contrast_dark = 'soft'
@@ -382,8 +376,8 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_python_binary_path = 'python'
 map <C-G>  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 let g:ycm_key_invoke_completion = '<C-J>'
-let g:ycm_path_to_python_interpreter = '/usr/local/bin/python3'
-let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
+let g:ycm_path_to_python_interpreter = '/usr/bin/python3'
+let g:ycm_server_python_interpreter = '/usr/bin/python3'
 "let g:ycm_global_ycm_extra_conf = '~/.vim/.global_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
 """"""""""""""""""""""""""""""""""""""""""""""
@@ -410,3 +404,9 @@ let g:jedi#use_splits_not_buffers = "left"
 let g:jedi#popup_on_dot = 0
 let g:jedi#popup_select_first = 0
 let g:jedi#show_call_signatures = "1"
+""""""""""""""""""""""""""""""""""""""""""""""
+" => Plugin: vim-airline/vim-airline
+""""""""""""""""""""""""""""""""""""""""""""""
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='base16'
