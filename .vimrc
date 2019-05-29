@@ -67,9 +67,10 @@ Plugin 'leafgarland/typescript-vim'
 Plugin 'fatih/vim-go'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+" tagbar, 使用go语言的话，需要安装gotags
+Plugin 'majutsushi/tagbar'
 call vundle#end() 
 filetype plugin indent on
-
 """"""""""""""""""""""""""""""""""""""""""""""
 "基本设置
 """"""""""""""""""""""""""""""""""""""""""""""
@@ -177,11 +178,13 @@ nnoremap <Leader>kw <C-W>k
 nnoremap <Leader>jw <C-W>j
 "定义快捷键在结对符之间跳转，助记pair
 nmap <Leader>pa %
+"使用NERDTree查看工程文件。设置快捷键，速记：tree show
+nmap <Leader>ts :NERDTreeToggle<CR>
+"定义Tagbar侧边栏窗口
+nmap <Leader>tb :TagbarToggle<CR>
 """"""""""""""""""""""""""""""""""""""""""""""
 "NERDTree设置
 """"""""""""""""""""""""""""""""""""""""""""""
-"使用NERDTree查看工程文件。设置快捷键，速记：tree show
-nmap <Leader>ts :NERDTreeToggle<CR>
 "设置NERDTree子窗口位置
 let NERDTreeWinSize=36
 "设置NERDTree子窗口位置
@@ -408,5 +411,41 @@ let g:jedi#show_call_signatures = "1"
 " => Plugin: vim-airline/vim-airline
 """"""""""""""""""""""""""""""""""""""""""""""
 let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='base16'
+
+"=================Extensions==================
+let g:airline#extensions#tabline#enabled = 1
+" 去掉tabline中的箭头
+" let g:airline#extensions#tabline#left_sep = ''
+" let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#formatter = 'jsformatter'
+""""""""""""""""""""""""""""""""""""""""""""""
+" => Plugin: majutsushi/tagbar
+""""""""""""""""""""""""""""""""""""""""""""""
+let g:tagbar_type_go = {
+    \ 'ctagstype' : 'go',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'i:imports:1',
+        \ 'c:constants',
+        \ 'v:variables',
+        \ 't:types',
+        \ 'n:interfaces',
+        \ 'w:fields',
+        \ 'e:embedded',
+        \ 'm:methods',
+        \ 'r:constructor',
+        \ 'f:functions'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 't' : 'ctype',
+        \ 'n' : 'ntype'
+    \ },
+    \ 'scope2kind' : {
+        \ 'ctype' : 't',
+        \ 'ntype' : 'n'
+    \ },
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
+    \ }
