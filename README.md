@@ -45,15 +45,22 @@ $ sudo ./deploy.sh
 
 # ==================================================
 
-## How to suport Go in YouCompleteMe?
+## ~~How to suport Go in YouCompleteMe?~~
 
-### 1. Make sure add two plugin nsf/gocode and Manishearth/godef into .vimrc
+### ~~1. Make sure add two plugin nsf/gocode and Manishearth/godef into .vimrc~~
 
-### 2. Install Go and add it to your path.
+### ~~2. Install Go and add it to your path.~~
 
-### 3. Navigate to `YouCompleteMe/third_party/ycmd/third_party/gocode` and run `go build`.
+### ~~3. Navigate to `YouCompleteMe/third_party/ycmd/third_party/gocode` and run `go build`.~~
 
-### 4. Navigate to `YouCompleteMe/third_party/ycmd/third_party/godef` and run `go build`.
+### ~~4. Navigate to `YouCompleteMe/third_party/ycmd/third_party/godef` and run `go build`.~~
+
+## Use proxy to jump out China Great Wall
+
+```shell
+export GOPROXY=https://goproxy.io
+export GO111MODULE=on
+```
 
 ## .tmux.conf
 Basic tmux config, need add below code into **.bashrc** before using tmux.
@@ -136,4 +143,25 @@ Create a config like this in your project's `.eslintrc`, or do so globally by pl
 Finally, configure Syntastic to use ESLint:
 ```php
 let g:syntastic_javascript_checkers = ['eslint']
+```
+
+
+## Fix tmux and vim style mismatch.
+
+After adding the line below into `.tmux.conf`
+
+```shell
+set -g default-terminal "screen-256color"
+```
+
+You still need to add the line below into `.vimrc`
+
+```shell
+set term=screen-256color
+```
+
+Finally, the alias need to be added to `.bashrc`
+
+```shell
+alias tmux='tmux -2'
 ```

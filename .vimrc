@@ -39,7 +39,6 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'morhetz/gruvbox'
 Plugin 'joshdick/onedark.vim'
 Plugin 'crusoexia/vim-monokai'
-Plugin 'powerline/powerline'
 Plugin 'junegunn/fzf'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'scrooloose/syntastic'
@@ -50,7 +49,8 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'tpope/vim-surround'
 " Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'Yggdroot/indentLine'
-Plugin 'ap/vim-buftabline'
+" 将buffer中的页面显示在tabline中
+" Plugin 'ap/vim-buftabline'
 " emmet, 用于快速构建html代码片段
 Plugin 'mattn/emmet-vim'
 " JavaScript bundle for vim, this bundle provides syntax highlighting and improved indentation.
@@ -65,12 +65,12 @@ Plugin 'vim-scripts/indentpython.vim'
 Plugin 'leafgarland/typescript-vim'
 " Go language support for Vim
 Plugin 'fatih/vim-go'
-" Go语言自动完成工具，如果需要Ycm支持Go语言的话，需要安装下面两个组件gocode和godef
-Plugin 'nsf/gocode', {'rtp': 'vim/'}
-Plugin 'Manishearth/godef'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+" tagbar, 使用go语言的话，需要安装gotags
+Plugin 'majutsushi/tagbar'
 call vundle#end() 
 filetype plugin indent on
-
 """"""""""""""""""""""""""""""""""""""""""""""
 "基本设置
 """"""""""""""""""""""""""""""""""""""""""""""
@@ -178,11 +178,13 @@ nnoremap <Leader>kw <C-W>k
 nnoremap <Leader>jw <C-W>j
 "定义快捷键在结对符之间跳转，助记pair
 nmap <Leader>pa %
+"使用NERDTree查看工程文件。设置快捷键，速记：tree show
+nmap <Leader>ts :NERDTreeToggle<CR>
+"定义Tagbar侧边栏窗口
+nmap <Leader>tb :TagbarToggle<CR>
 """"""""""""""""""""""""""""""""""""""""""""""
 "NERDTree设置
 """"""""""""""""""""""""""""""""""""""""""""""
-"使用NERDTree查看工程文件。设置快捷键，速记：tree show
-nmap <Leader>ts :NERDTreeToggle<CR>
 "设置NERDTree子窗口位置
 let NERDTreeWinSize=36
 "设置NERDTree子窗口位置
@@ -271,6 +273,7 @@ noremap <F5> :Autoformat<CR>
 let g:autoformat_autoindent = 0
 let g:autoformat_retab = 0
 let g:autoformat_remove_trailing_spaces = 0
+let g:formatter_yapf_style = 'pep8'
 
 """"""""""""""""""""""""""""""""""""""""""""""
 " => Plugin: vim-gitgutter
@@ -296,14 +299,6 @@ let g:gitgutter_highlight_lines = 0
 let g:indentLine_char = '|'
 let g:indentLine_color_term = 239
 map <F11> :IndentLinesToggle<CR>
-
-""""""""""""""""""""""""""""""""""""""""""""""
-" => Plugin: powerline 
-""""""""""""""""""""""""""""""""""""""""""""""
-set guifont=PowerlineSymbols\ for\ Powerline
-set nocompatible
-set t_Co=256
-let g:Powerline_symbols = 'fancy'
 
 """"""""""""""""""""""""""""""""""""""""""""""
 " => Plugin: gruvbox 
@@ -384,9 +379,10 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_python_binary_path = 'python'
 map <C-G>  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 let g:ycm_key_invoke_completion = '<C-J>'
-let g:ycm_path_to_python_interpreter = '/usr/bin/python'
-let g:ycm_server_python_interpreter = '/usr/bin/python'
-let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+let g:ycm_path_to_python_interpreter = '/usr/bin/python3'
+let g:ycm_server_python_interpreter = '/usr/bin/python3'
+"let g:ycm_global_ycm_extra_conf = '~/.vim/.global_extra_conf.py'
+let g:ycm_confirm_extra_conf = 0
 """"""""""""""""""""""""""""""""""""""""""""""
 " => Plugin: UltiSnips
 """"""""""""""""""""""""""""""""""""""""""""""
@@ -404,10 +400,52 @@ let python_highlight_all = 1
 """"""""""""""""""""""""""""""""""""""""""""""
 " => Plugin: jedi-vim
 """"""""""""""""""""""""""""""""""""""""""""""
-let g:jedi#auto_initialization = 0
-let g:jedi#auto_vim_configuration = 0
+"let g:jedi#auto_initialization = 0 
+"let g:jedi#auto_vim_configuration = 0
 let g:jedi#use_tabs_not_buffers = 1
 let g:jedi#use_splits_not_buffers = "left"
 let g:jedi#popup_on_dot = 0
 let g:jedi#popup_select_first = 0
 let g:jedi#show_call_signatures = "1"
+""""""""""""""""""""""""""""""""""""""""""""""
+" => Plugin: vim-airline/vim-airline
+""""""""""""""""""""""""""""""""""""""""""""""
+let g:airline_powerline_fonts = 1
+let g:airline_theme='base16'
+
+"=================Extensions==================
+let g:airline#extensions#tabline#enabled = 1
+" 去掉tabline中的箭头
+" let g:airline#extensions#tabline#left_sep = ''
+" let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#formatter = 'jsformatter'
+""""""""""""""""""""""""""""""""""""""""""""""
+" => Plugin: majutsushi/tagbar
+""""""""""""""""""""""""""""""""""""""""""""""
+let g:tagbar_type_go = {
+    \ 'ctagstype' : 'go',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'i:imports:1',
+        \ 'c:constants',
+        \ 'v:variables',
+        \ 't:types',
+        \ 'n:interfaces',
+        \ 'w:fields',
+        \ 'e:embedded',
+        \ 'm:methods',
+        \ 'r:constructor',
+        \ 'f:functions'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 't' : 'ctype',
+        \ 'n' : 'ntype'
+    \ },
+    \ 'scope2kind' : {
+        \ 'ctype' : 't',
+        \ 'ntype' : 'n'
+    \ },
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
+    \ }
