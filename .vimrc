@@ -250,6 +250,13 @@ let g:syntastic_javascript_jshint_args = "/home/kevin/.jshintrc"
 let g:syntastic_json_checkers = ['jsonlint']
 
 let g:syntastic_python_checkers = ['flake8']
+"""
+" F401: 'scrapy' imported but unused
+" E501: line too long (86 > 79 characters)
+"""
+let g:syntastic_python_flake8_args = '--ignore=F401,E501'
+" 注释
+" let g:syntastic_python_flake8_args = '--ignore=W,F,E121,E123,E126,E226,E402,E271,E24,E704,W503,W504,E265,F401,E501,E231,E225,E303,E302,E203,W291,E261,E262,F841,W391,E101'
 " let g:syntastic_python_flake8_args = '--config=/home/kevin/.flake8.ini'
 
 let g:syntastic_go_checkers = ['gofmt']
@@ -379,8 +386,8 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_python_binary_path = 'python'
 map <C-G>  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 let g:ycm_key_invoke_completion = '<C-J>'
-let g:ycm_path_to_python_interpreter = '/usr/bin/python3'
-let g:ycm_server_python_interpreter = '/usr/bin/python3'
+let g:ycm_path_to_python_interpreter = '/usr/local/bin/python3'
+let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
 "let g:ycm_global_ycm_extra_conf = '~/.vim/.global_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
 """"""""""""""""""""""""""""""""""""""""""""""
@@ -412,7 +419,6 @@ let g:jedi#show_call_signatures = "1"
 """"""""""""""""""""""""""""""""""""""""""""""
 let g:airline_powerline_fonts = 1
 let g:airline_theme='base16'
-
 "=================Extensions==================
 let g:airline#extensions#tabline#enabled = 1
 " 去掉tabline中的箭头
@@ -449,3 +455,7 @@ let g:tagbar_type_go = {
     \ 'ctagsbin'  : 'gotags',
     \ 'ctagsargs' : '-sort -silent'
     \ }
+""""""""""""""""""""""""""""""""""""""""""""""
+" => Plugin:fatih/vim-go
+""""""""""""""""""""""""""""""""""""""""""""""
+let g:go_bin_path = expand("$HOME/golang/bin")
