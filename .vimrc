@@ -202,7 +202,7 @@ let NERDTreeIgnore=['\.pyc$','\~$']
 """"""""""""""""""""""""""""""""""""""""""""""
 "nerdtree-git-plugin设置
 """"""""""""""""""""""""""""""""""""""""""""""
-let g:NERDTreeIndicatorMapCustom = {
+let g:NERDTreeGitStatusIndicatorMapCustom = {
     \ "Modified"  : "✹",
     \ "Staged"    : "✚",
     \ "Untracked" : "✭",
