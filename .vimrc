@@ -29,7 +29,6 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'gregsexton/gitv'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
@@ -365,31 +364,6 @@ nmap <leader>9 <Plug>BufTabLine.Go(9)
 nmap <leader>0 <Plug>BufTabLine.Go(0)
 map <leader>da     :call DeleteAllBuffersInWindow()<CR>
 map <leader>df     :call DeleteCurrentBufferInWindow()<CR>
-""""""""""""""""""""""""""""""""""""""""""""""
-" => Plugin: YouCompleteMe
-""""""""""""""""""""""""""""""""""""""""""""""
-" YouCompleteMe settings
-let g:ycm_collect_identifiers_from_comments_and_strings = 0
-" 输入第0个字符开始补全
-let g:ycm_min_num_of_chars_for_completion=1
-" 禁止缓存匹配项,每次都重新生成匹配项
-let g:ycm_cache_omnifunc=0
-" 开启语义补全
-let g:ycm_seed_identifiers_with_syntax=1
-" 在注释输入中也能补全
-let g:ycm_complete_in_comments = 1
-" 在字符串输入中也能补全
-let g:ycm_complete_in_strings = 1
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_autoclose_preview_window_after_insertion = 1
-" let g:ycm_filetype_whitelist = { 'python': 1 }
-let g:ycm_python_binary_path = 'python'
-map <C-G>  :YcmCompleter GoToDefinitionElseDeclaration<CR>
-let g:ycm_key_invoke_completion = '<C-J>'
-let g:ycm_path_to_python_interpreter = '/usr/local/bin/python3'
-let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
-"let g:ycm_global_ycm_extra_conf = '~/.vim/.global_extra_conf.py'
-let g:ycm_confirm_extra_conf = 0
 """"""""""""""""""""""""""""""""""""""""""""""
 " => Plugin: UltiSnips
 """"""""""""""""""""""""""""""""""""""""""""""

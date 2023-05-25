@@ -36,7 +36,7 @@ $ sudo ./deploy.sh
 #### 3. Start Vim and install plugin
 
 ```vim
-:PlginInstall
+:PluginInstall
 ```
 
 #### 4. Install YouCompleteMe Plugin
